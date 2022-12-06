@@ -1,0 +1,46 @@
+/* removes links that are not tags */
+
+.featured-tags a:not([href*="/tagged"]) {
+    display:none;
+}
+
+/* small placeholder before the text 
+  remove everything after this comment if you do not want placeholders
+*/
+.placeholder {
+    height:50px;
+    width:64px;
+    overflow:hidden;
+    border-radius:.2rem;
+    position:relative;
+    margin-right:var(--spacing-md);
+    background:rgba(255,255,255,.2);
+}
+
+.placeholder img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* if it is an NPF post, hide everything that is not an npf_row (where the images are) */
+.placeholder blockquote :not(.npf_row), .placeholder p {
+    display:none;
+    margin:0;
+    padding:0;
+}
+
+/* position the images (you can change this if you do not like how this looks) */
+blockquote .npf_row, blockquote,  blockquote figure {
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+.placeholder blockquote .npf_row img:first-of-type {
+    display:block;
+    position:absolute;
+    width:100%;
+    left:0;
+    height:100%;
+}
